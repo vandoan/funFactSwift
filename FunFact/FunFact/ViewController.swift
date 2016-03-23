@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var funFactLabel: UILabel!
+    
+    let factBook = FactBook()
+    
     let factsArray = ["Ants stretch when they wake up in the morning.","Ostritches can run faster than horses."]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func showFunFact() {
-        funFactLabel.text = factsArray[1]
+        funFactLabel.text = factBook.randomFact()
     }
 
 }
