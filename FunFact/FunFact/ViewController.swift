@@ -13,12 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var funFactLabel: UILabel!
     
     let factBook = FactBook()
+    let colorWheel = ColorWheel()
     
     let factsArray = ["Ants stretch when they wake up in the morning.","Ostritches can run faster than horses."]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        funFactLabel.text = factsArray[0]
+        funFactLabel.text = factBook.randomFact()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func showFunFact() {
+        view.backgroundColor = colorWheel.randomColor()
         funFactLabel.text = factBook.randomFact()
     }
 

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-tZ-5Ii">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJu-tZ-5Ii">
                                 <rect key="frame" x="199" y="313" width="203" height="27"/>
                                 <state key="normal" title="Show a new fun fact">
                                     <color key="titleColor" red="0.93264400420000004" green="0.96883266000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,37 +29,74 @@
                                     <action selector="showFunFact" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2v-v9-dQH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interesting fact goes here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-3A-f5a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Interesting fact goes here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-3A-f5a">
                                 <rect key="frame" x="44" y="123" width="513" height="28"/>
                                 <color key="tintColor" red="0.93264400420000004" green="0.96883266000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="XYc-9T-JTl"/>
+                                    <constraint firstAttribute="height" constant="66" id="qUn-rq-7BC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.93264400420000004" green="0.96883266000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XYc-9T-JTl"/>
+                                        <exclude reference="qUn-rq-7BC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XYc-9T-JTl"/>
+                                        <include reference="qUn-rq-7BC"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-56" y="173" width="513" height="28"/>
                                 </variation>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5X-P7-BeT">
+                                <rect key="frame" x="111" y="0.0" width="127" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Interesting Facts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mn-A2-eAd">
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.93264400420000004" green="0.96883266000000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <variation key="widthClass=compact" axis="vertical"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.44390564510994512" green="0.74273841307481803" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Lmf-3A-f5a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0jk-Xb-4mM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uJu-tZ-5Ii" secondAttribute="bottom" constant="40" id="4zg-RZ-0GK"/>
+                            <constraint firstItem="M5X-P7-BeT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="8pv-ex-Lme"/>
                             <constraint firstItem="uJu-tZ-5Ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EPK-Ea-rjB"/>
+                            <constraint firstItem="uJu-tZ-5Ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PGZ-Sw-sHn"/>
+                            <constraint firstItem="Lmf-3A-f5a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtZ-Pk-2h8"/>
                             <constraint firstItem="Lmf-3A-f5a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="wJW-wy-94o"/>
+                            <constraint firstItem="M5X-P7-BeT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygz-Fk-DIB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="0jk-Xb-4mM"/>
+                                <exclude reference="8pv-ex-Lme"/>
+                                <exclude reference="ygz-Fk-DIB"/>
+                                <exclude reference="ZtZ-Pk-2h8"/>
                                 <exclude reference="wJW-wy-94o"/>
                                 <exclude reference="EPK-Ea-rjB"/>
+                                <exclude reference="PGZ-Sw-sHn"/>
                                 <exclude reference="4zg-RZ-0GK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="0jk-Xb-4mM"/>
+                                <include reference="8pv-ex-Lme"/>
+                                <include reference="ygz-Fk-DIB"/>
+                                <include reference="ZtZ-Pk-2h8"/>
                                 <include reference="wJW-wy-94o"/>
                                 <include reference="EPK-Ea-rjB"/>
+                                <include reference="PGZ-Sw-sHn"/>
                                 <include reference="4zg-RZ-0GK"/>
                             </mask>
                         </variation>
